@@ -26,7 +26,7 @@ public class CPHInline
                 // excluding lines that match the string to delete
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if (!foundStringToDelete && line == rawInput)
+                    if (!foundStringToDelete && line.Equals(rawInput, StringComparison.OrdinalIgnoreCase))
                     {
                         foundStringToDelete = true;
                         lineDeleted = true;
