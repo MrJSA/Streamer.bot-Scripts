@@ -41,7 +41,7 @@ public class CPHInline
                 
                 foreach (string whitelistUrl in whitelist)
                 {
-                    string whitelistPattern = @".*" + whitelistUrl.Replace("/", @"\/") + @".*";
+                    string whitelistPattern = Regex.Escape(whitelistUrl);
                     if (Regex.IsMatch(message, whitelistPattern, RegexOptions.IgnoreCase))
                     {
                         allowed = true;
